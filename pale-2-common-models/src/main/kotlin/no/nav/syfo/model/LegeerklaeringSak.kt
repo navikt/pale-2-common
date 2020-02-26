@@ -1,6 +1,6 @@
 package no.nav.syfo.model
 
 data class LegeerklaeringSak(
-    val legeerklaering: Legeerklaering,
+    val ReceivedLegeerklaering: ReceivedLegeerklaering,
     val validationResult: ValidationResult
 )

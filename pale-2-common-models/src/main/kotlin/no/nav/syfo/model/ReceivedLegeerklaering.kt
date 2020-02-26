@@ -5,6 +5,7 @@ import java.time.LocalDateTime
 data class ReceivedLegeerklaering(
     val legeerklaering: Legeerklaering,
     val personNrPasient: String,
+    val pasientAktoerId: String,
     val personNrLege: String,
     val navLogId: String,
     val msgId: String,
