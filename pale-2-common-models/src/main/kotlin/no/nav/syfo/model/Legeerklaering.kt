@@ -20,7 +20,6 @@ data class Legeerklaering(
     val kontakt: Kontakt,
     val pasientenBurdeIkkeVite: String?,
     val signatur: Signatur,
-    val avsenderSystem: AvsenderSystem,
     val signaturDato: LocalDateTime
 )
 
@@ -46,12 +45,6 @@ data class Pasient(
     val yrke: String?,
     val arbeidsgiver: Arbeidsgiver
 )
-
-data class AvsenderSystem(
-    val navn: String,
-    val versjon: String
-)
-
 
 data class Arbeidsgiver(
     val navn: String?,
