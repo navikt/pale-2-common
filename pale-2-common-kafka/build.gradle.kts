@@ -37,7 +37,7 @@ publishing {
 
             pom {
                 name.set("pale-2-common-kafka")
-                description.set("Bibliotek for felles domene modeller for legeerklærings domenet")
+                description.set("Bibliotek for felles kafka oppsett for legeerklering doement")
                 url.set("https://github.com/navikt/pale-2-common")
                 licenses {
                     license {
