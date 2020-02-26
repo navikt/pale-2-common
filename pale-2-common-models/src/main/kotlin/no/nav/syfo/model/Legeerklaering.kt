@@ -19,6 +19,7 @@ data class Legeerklaering(
     val andreOpplysninger: String?,
     val kontakt: Kontakt,
     val pasientenBurdeIkkeVite: String?,
+    val signatur: Signatur,
     val avsenderSystem: AvsenderSystem,
     val signaturDato: LocalDateTime
 )
@@ -123,4 +124,14 @@ data class Kontakt(
     val skalKontakteBasisgruppe: Boolean,
     val kontakteAnnenInstans: String?,
     val oenskesKopiAvVedtak: Boolean
+)
+
+data class Signatur(
+    val dato: ZonedDateTime,
+    val navn: String?,
+    val adresse: String?,
+    val postnummer: String?,
+    val poststed: String?,
+    val signatur: String?,
+    val tlfNummer: String?
 )
