@@ -25,7 +25,7 @@ subprojects {
 publishing {
     repositories {
         maven {
-            url = uri("https://maven.pkg.github.com/navikt/syfosm-common")
+            url = uri("https://maven.pkg.github.com/navikt/pale-2-common")
             credentials {
                 username = System.getenv("GITHUB_USERNAME")
                 password = System.getenv("GITHUB_PASSWORD")
