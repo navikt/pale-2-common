@@ -1,4 +1,9 @@
+val ktorVersion = "1.3.0"
 val jacksonVersion = "2.9.8"
+
+repositories {
+    maven(url = "https://kotlin.bintray.com/kotlinx")
+}
 
 plugins {
     id("java")
@@ -7,8 +12,9 @@ plugins {
 }
 
 dependencies {
-    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:$jacksonVersion")
-    implementation("com.fasterxml.jackson.dataformat:jackson-dataformat-xml:$jacksonVersion")
+    implementation("io.ktor:ktor-client-cio:$ktorVersion")
+    implementation("io.ktor:ktor-client-jackson:$ktorVersion")
+    implementation("io.ktor:ktor-client-auth-jvm:$ktorVersion")
     implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:$jacksonVersion")
 }
 
@@ -37,8 +43,8 @@ publishing {
         create<MavenPublication>("mavenJava") {
 
             pom {
-                name.set("pale-2-common-models")
-                description.set("Bibliotek for felles domene modeller for legeerklærings domenet")
+                name.set("syfoam-common-rest-sts")
+                description.set("Bibliotek for rest sts oppsett for legeerklæring domentet")
                 url.set("https://github.com/navikt/pale-2-common")
                 licenses {
                     license {

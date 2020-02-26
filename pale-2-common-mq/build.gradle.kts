@@ -1,4 +1,4 @@
-val jacksonVersion = "2.9.8"
+val ibmMqVersion = "9.1.2.0"
 
 plugins {
     id("java")
@@ -7,9 +7,7 @@ plugins {
 }
 
 dependencies {
-    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:$jacksonVersion")
-    implementation("com.fasterxml.jackson.dataformat:jackson-dataformat-xml:$jacksonVersion")
-    implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:$jacksonVersion")
+    api("com.ibm.mq:com.ibm.mq.allclient:$ibmMqVersion")
 }
 
 subprojects {
@@ -37,8 +35,8 @@ publishing {
         create<MavenPublication>("mavenJava") {
 
             pom {
-                name.set("pale-2-common-models")
-                description.set("Bibliotek for felles domene modeller for legeerklærings domenet")
+                name.set("pale-2-common-mq")
+                description.set("Bibliotek for standar MQ for legeerklæring doemenet")
                 url.set("https://github.com/navikt/pale-2-common")
                 licenses {
                     license {
