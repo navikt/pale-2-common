@@ -7,6 +7,7 @@ data class ReceivedLegeerklaering(
     val personNrPasient: String,
     val pasientAktoerId: String,
     val personNrLege: String,
+    val legeAktoerId: String,
     val navLogId: String,
     val msgId: String,
     val legekontorOrgNr: String?,
