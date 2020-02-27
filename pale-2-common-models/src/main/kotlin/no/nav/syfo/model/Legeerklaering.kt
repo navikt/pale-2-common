@@ -6,16 +6,16 @@ import java.time.ZonedDateTime
 data class Legeerklaering(
     val id: String,
     val arbeidsvurderingVedSykefravaer: Boolean,
-    val arbeidsavklaringsPenger: Boolean,
-    val yrkesrettetAttfoering: Boolean,
-    val ufoerepensjon: Boolean,
+    val arbeidsavklaringspenger: Boolean,
+    val yrkesrettetAttforing: Boolean,
+    val uforepensjon: Boolean,
     val pasient: Pasient,
-    val sykdomsOpplysninger: SykdomsOpplysninger,
+    val sykdomsopplysninger: Sykdomsopplysninger,
     val plan: Plan?,
     val forslagTilTiltak: ForslagTilTiltak,
     val funksjonsOgArbeidsevne: FunksjonsOgArbeidsevne,
     val prognose: Prognose,
-    val aarsaksSammenheng: String?,
+    val arsakssammenheng: String?,
     val andreOpplysninger: String?,
     val kontakt: Kontakt,
     val pasientenBurdeIkkeVite: String?,
@@ -29,15 +29,15 @@ data class Plan(
     val utredningsplan: String?,
     val behandlingsplan: String?,
     val vurderingAvTidligerePlan: String?,
-    val naarSpoerreOmNyeLegeopplysninger: String?,
-    val videreBehandlingIkkeAktuellGrunn: String?
+    val narSporreOmNyeLegeopplysninger: String?,
+    val videreBehandlingIkkeAktueltGrunn: String?
 )
 
 data class Pasient(
     val fornavn: String,
     val mellomnavn: String?,
     val etternavn: String,
-    val foedselsnummer: String,
+    val fnr: String,
     val navKontor: String,
     val adresse: String,
     val postnummer: Int?,
@@ -60,13 +60,13 @@ data class Henvisning(
     val antattVentetIUker: Int
 )
 
-data class SykdomsOpplysninger(
+data class Sykdomsopplysninger(
     val hoveddiagnose: Diagnose?,
     val bidiagnose: List<Diagnose?>,
-    val arbeidsufoerFra: ZonedDateTime?,
-    val sykdomsHistorie: String,
+    val arbeidsuforFra: ZonedDateTime?,
+    val sykdomshistorie: String,
     val statusPresens: String,
-    val boerNavKontoretVurdereOmDetErEnYrkesskade: Boolean
+    val borNavKontoretVurdereOmDetErEnYrkesskade: Boolean
 )
 
 data class Diagnose(
@@ -76,12 +76,12 @@ data class Diagnose(
 
 data class ForslagTilTiltak(
     val behov: Boolean,
-    val kjoepAvHelsetjenester: Boolean,
+    val kjopAvHelsetjenester: Boolean,
     val reisetilskudd: Boolean,
-    val aktivSykMelding: Boolean,
+    val aktivSykmelding: Boolean,
     val hjelpemidlerArbeidsplassen: Boolean,
-    val arbeidsavklaringsPenger: Boolean,
-    val friskemeldingTilArbeidsformidling: Boolean,
+    val arbeidsavklaringspenger: Boolean,
+    val friskmeldingTilArbeidsformidling: Boolean,
     val andreTiltak: String?,
     val naermereOpplysninger: String,
     val tekst: String
@@ -89,26 +89,26 @@ data class ForslagTilTiltak(
 
 data class FunksjonsOgArbeidsevne(
     val vurderingFunksjonsevne: String,
-    val iIntektsgivendeArbeid: Boolean,
+    val inntektsgivendeArbeid: Boolean,
     val hjemmearbeidende: Boolean,
     val student: Boolean,
     val annetArbeid: String,
     val kravTilArbeid: String?,
     val kanGjenopptaTidligereArbeid: Boolean,
-    val kanGjenopptaTidligereArbeidNaa: Boolean,
+    val kanGjenopptaTidligereArbeidNa: Boolean,
     val kanGjenopptaTidligereArbeidEtterBehandling: Boolean,
-    val kanIkkeINaaverendeArbeid: String?,
+    val kanIkkeGjenopptaNaverendeArbeid: String?,
     val kanTaAnnetArbeid: Boolean,
-    val kanTaAnnetArbeidNaa: Boolean,
+    val kanTaAnnetArbeidNa: Boolean,
     val kanTaAnnetArbeidEtterBehandling: Boolean,
-    val kanIkkeIAnnetArbeid: String?
+    val kanIkkeTaAnnetArbeid: String?
 )
 
 data class Prognose(
     val vilForbedreArbeidsevne: Boolean,
-    val anslaatVarighetSykdom: String?,
-    val anslaatVarighetFunksjonsNedsetting: String?,
-    val anslaatVarighetNedsattArbeidsevne: String?
+    val anslattVarighetSykdom: String?,
+    val anslattVarighetFunksjonsnedsetting: String?,
+    val anslattVarighetNedsattArbeidsevne: String?
 )
 
 data class Kontakt(
@@ -116,7 +116,7 @@ data class Kontakt(
     val skalKontakteArbeidsgiver: Boolean,
     val skalKontakteBasisgruppe: Boolean,
     val kontakteAnnenInstans: String?,
-    val oenskesKopiAvVedtak: Boolean
+    val onskesKopiAvVedtak: Boolean
 )
 
 data class Signatur(
