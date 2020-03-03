@@ -14,6 +14,5 @@ data class RuleInfo(
 
 enum class Status {
     OK,
-    MANUAL_PROCESSING,
     INVALID
 }
