@@ -19,7 +19,7 @@ data class Legeerklaering(
     val andreOpplysninger: String?,
     val kontakt: Kontakt,
     val pasientenBurdeIkkeVite: String?,
-    val skjermetForPasient: Boolean,
+    val tilbakeholdInnhold: Boolean,
     val signatur: Signatur,
     val signaturDato: LocalDateTime
 )
