@@ -39,7 +39,7 @@ data class Pasient(
     val mellomnavn: String?,
     val etternavn: String,
     val fnr: String,
-    val navKontor: String,
+    val navKontor: String?,
     val adresse: String,
     val postnummer: Int?,
     val poststed: String,
