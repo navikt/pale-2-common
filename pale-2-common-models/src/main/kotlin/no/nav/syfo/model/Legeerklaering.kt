@@ -67,7 +67,8 @@ data class Sykdomsopplysninger(
     val arbeidsuforFra: ZonedDateTime?,
     val sykdomshistorie: String,
     val statusPresens: String,
-    val borNavKontoretVurdereOmDetErEnYrkesskade: Boolean
+    val borNavKontoretVurdereOmDetErEnYrkesskade: Boolean,
+    val yrkesSkadeDato: ZonedDateTime?
 )
 
 data class Diagnose(
