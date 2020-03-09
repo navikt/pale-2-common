@@ -57,18 +57,18 @@ data class Arbeidsgiver(
 
 data class Henvisning(
     val tekst: String,
-    val dato: ZonedDateTime,
+    val dato: LocalDateTime,
     val antattVentetIUker: Int
 )
 
 data class Sykdomsopplysninger(
     val hoveddiagnose: Diagnose?,
     val bidiagnose: List<Diagnose?>,
-    val arbeidsuforFra: ZonedDateTime?,
+    val arbeidsuforFra: LocalDateTime?,
     val sykdomshistorie: String,
     val statusPresens: String,
     val borNavKontoretVurdereOmDetErEnYrkesskade: Boolean,
-    val yrkesSkadeDato: ZonedDateTime?
+    val yrkesSkadeDato: LocalDateTime?
 )
 
 data class Diagnose(
@@ -122,7 +122,7 @@ data class Kontakt(
 )
 
 data class Signatur(
-    val dato: ZonedDateTime,
+    val dato: LocalDateTime,
     val navn: String?,
     val adresse: String?,
     val postnummer: String?,
