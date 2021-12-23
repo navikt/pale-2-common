@@ -1,27 +1,16 @@
-val cxfVersion = "3.3.1"
-
+val cxfVersion = "3.4.5"
+val commonsCollectionVersion = "3.2.2"
 plugins {
     id("java")
     id("maven-publish")
-    id("org.sonarqube") version "2.7"
 }
 
 dependencies {
+    api("commons-collections:commons-collections:$commonsCollectionVersion")
     api("org.apache.cxf:cxf-rt-frontend-jaxws:$cxfVersion")
     api("org.apache.cxf:cxf-rt-features-logging:$cxfVersion")
     api("org.apache.cxf:cxf-rt-transports-http:$cxfVersion")
     api("org.apache.cxf:cxf-rt-ws-security:$cxfVersion")
-}
-
-subprojects {
-    properties["sonarHost"]?.let { host ->
-        sonarqube {
-            properties {
-                property("sonar.sourceEncoding", "UTF-8")
-                property("sonar.host.url", host)
-            }
-        }
-    }
 }
 
 publishing {

@@ -1,24 +1,12 @@
-val prometheusVersion = "0.6.0"
+val prometheusVersion = "0.14.1"
 
 plugins {
     id("java")
     id("maven-publish")
-    id("org.sonarqube") version "2.7"
 }
 
 dependencies {
     api("io.prometheus:simpleclient_common:$prometheusVersion")
-}
-
-subprojects {
-    properties["sonarHost"]?.let { host ->
-        sonarqube {
-            properties {
-                property("sonar.sourceEncoding", "UTF-8")
-                property("sonar.host.url", host)
-            }
-        }
-    }
 }
 
 publishing {

@@ -1,5 +1,5 @@
-val ktorVersion = "1.3.1"
-val jacksonVersion = "2.9.8"
+val ktorVersion = "1.6.7"
+val jacksonVersion = "2.13.1"
 
 repositories {
     maven(url = "https://kotlin.bintray.com/kotlinx")
@@ -8,7 +8,6 @@ repositories {
 plugins {
     id("java")
     id("maven-publish")
-    id("org.sonarqube") version "2.7"
 }
 
 dependencies {
@@ -16,17 +15,6 @@ dependencies {
     implementation("io.ktor:ktor-client-jackson:$ktorVersion")
     implementation("io.ktor:ktor-client-auth-jvm:$ktorVersion")
     implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:$jacksonVersion")
-}
-
-subprojects {
-    properties["sonarHost"]?.let { host ->
-        sonarqube {
-            properties {
-                property("sonar.sourceEncoding", "UTF-8")
-                property("sonar.host.url", host)
-            }
-        }
-    }
 }
 
 publishing {
