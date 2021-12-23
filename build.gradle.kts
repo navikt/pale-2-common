@@ -1,16 +1,17 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
-val kluentVersion = "1.49"
-val spekVersion =  "2.0.8"
-val junitJupiterVersion = "5.4.0"
-val jacksonVersion = "2.9.8"
+val kluentVersion = "1.68"
+val spekVersion =  "2.0.17"
+val junitJupiterVersion = "5.8.2"
+val jacksonVersion = "2.13.1"
+val kotlinVersion = "1.6.0"
 
 repositories {
     mavenCentral()
 }
 
 plugins {
-    kotlin("jvm") version "1.3.61"
+    kotlin("jvm") version "1.6.0"
 }
 
 allprojects {
@@ -19,7 +20,6 @@ allprojects {
 
     repositories {
         mavenCentral()
-        jcenter()
     }
 }
 
@@ -28,20 +28,17 @@ subprojects {
 
     repositories {
         mavenCentral()
-        jcenter()
     }
 
     dependencies {
-        implementation(kotlin("stdlib"))
-        implementation(kotlin("reflect"))
-
+        implementation("org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion")
         testImplementation("org.spekframework.spek2:spek-dsl-jvm:$spekVersion")
         testImplementation("org.amshove.kluent:kluent:$kluentVersion")
         testRuntimeOnly("org.spekframework.spek2:spek-runner-junit5:$spekVersion")
     }
 
     tasks.withType<KotlinCompile> {
-        kotlinOptions.jvmTarget = "1.8"
+        kotlinOptions.jvmTarget = "17"
     }
 
     tasks.withType<Test> {
@@ -52,5 +49,5 @@ subprojects {
     }
 }
 dependencies {
-    implementation(kotlin("stdlib-jdk8"))
+    implementation("org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion")
 }

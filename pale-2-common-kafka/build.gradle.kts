@@ -1,25 +1,13 @@
-val kafkaVersion = "2.0.0"
+val kafkaVersion = "3.0.0"
 
 plugins {
     id("java")
     id("maven-publish")
-    id("org.sonarqube") version "2.7"
 }
 
 dependencies {
     api("org.apache.kafka:kafka_2.12:$kafkaVersion")
     api("org.apache.kafka:kafka-streams:$kafkaVersion")
-}
-
-subprojects {
-    properties["sonarHost"]?.let { host ->
-        sonarqube {
-            properties {
-                property("sonar.sourceEncoding", "UTF-8")
-                property("sonar.host.url", host)
-            }
-        }
-    }
 }
 
 publishing {

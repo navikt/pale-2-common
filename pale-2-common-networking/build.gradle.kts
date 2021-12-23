@@ -1,13 +1,12 @@
-val coroutinesVersion = "1.3.3"
-val ktorVersion = "1.3.1"
-val logbackVersion = "1.2.3"
-val logstashEncoderVersion = "5.1"
+val coroutinesVersion = "1.5.2"
+val ktorVersion = "1.6.7"
+val logbackVersion = "1.2.9"
+val logstashEncoderVersion = "7.0.1"
 
 
 plugins {
     id("java")
     id("maven-publish")
-    id("org.sonarqube") version "2.7"
 }
 
 dependencies {
@@ -19,17 +18,6 @@ dependencies {
 
     implementation("ch.qos.logback:logback-classic:$logbackVersion")
     implementation("net.logstash.logback:logstash-logback-encoder:$logstashEncoderVersion")
-}
-
-subprojects {
-    properties["sonarHost"]?.let { host ->
-        sonarqube {
-            properties {
-                property("sonar.sourceEncoding", "UTF-8")
-                property("sonar.host.url", host)
-            }
-        }
-    }
 }
 
 publishing {
