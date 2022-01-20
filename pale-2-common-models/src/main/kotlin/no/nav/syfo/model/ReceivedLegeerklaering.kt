@@ -18,11 +18,9 @@ data class ReceivedLegeerklaering(
     /**
      * Full fellesformat as a XML payload, this is only used for infotrygd compat and should be removed in thefuture
      */
-    @Deprecated("Only used for infotrygd compat, will be removed in the future")
     val fellesformat: String,
     /**
      * TSS-ident, this is only used for infotrygd compat and should be removed in thefuture
      */
-    @Deprecated("Only used for infotrygd compat, will be removed in the future")
     val tssid: String?
 )
