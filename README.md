@@ -8,3 +8,6 @@ Common code used over all legereklærings(PALE) applications
 * Kotlin
 * Jackson
 * Gradle
+
+## Requirements
+* JDK 17
