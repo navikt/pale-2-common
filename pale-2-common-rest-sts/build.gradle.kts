@@ -1,7 +1,5 @@
-val ktorVersion = "2.0.0"
-val jacksonVersion = "2.13.2"
-val jacksonPatchVersion = "2.13.2.2"
-val jacksonBomVersion = "2.13.2.20220328"
+val ktorVersion = "2.0.1"
+val jacksonVersion = "2.13.3"
 
 repositories {
     maven(url = "https://kotlin.bintray.com/kotlinx")
@@ -20,8 +18,6 @@ dependencies {
     implementation("io.ktor:ktor-serialization-jackson:$ktorVersion")
 
     implementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:$jacksonVersion")
-    implementation("com.fasterxml.jackson:jackson-bom:$jacksonBomVersion")
-    implementation("com.fasterxml.jackson.core:jackson-databind:$jacksonPatchVersion")
 }
 
 publishing {

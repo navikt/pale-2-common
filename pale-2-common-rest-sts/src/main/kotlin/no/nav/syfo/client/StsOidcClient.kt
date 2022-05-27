@@ -39,6 +39,7 @@ class StsOidcClient(
                 sendWithoutRequest { true }
             }
         }
+        expectSuccess = true
     }
 
     private var oidcToken: OidcToken = runBlocking { oidcToken() }
