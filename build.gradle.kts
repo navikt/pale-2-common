@@ -1,15 +1,14 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
-val kluentVersion = "1.68"
-val kotestVersion = "5.4.2"
-val kotlinVersion = "1.7.10"
+val kotlinVersion = "1.8.0"
+val junitJupiterVersion = "5.9.0"
 
 repositories {
     mavenCentral()
 }
 
 plugins {
-    kotlin("jvm") version "1.7.10"
+    kotlin("jvm") version "1.8.0"
 }
 
 allprojects {
@@ -30,8 +29,9 @@ subprojects {
 
     dependencies {
         implementation("org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion")
-        testImplementation("io.kotest:kotest-runner-junit5:$kotestVersion")
-        testImplementation("org.amshove.kluent:kluent:$kluentVersion")
+        testImplementation("org.junit.jupiter:junit-jupiter-api:$junitJupiterVersion")
+        testImplementation("org.junit.jupiter:junit-jupiter-engine:$junitJupiterVersion")
+
     }
 
     tasks.withType<KotlinCompile> {
@@ -42,6 +42,8 @@ subprojects {
         useJUnitPlatform()
         testLogging {
             events("passed", "skipped", "failed")
+            showStackTraces = true
+            exceptionFormat = org.gradle.api.tasks.testing.logging.TestExceptionFormat.FULL
         }
     }
 }
