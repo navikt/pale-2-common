@@ -1,4 +1,4 @@
-val cxfVersion = "3.4.5"
+val cxfVersion = "3.5.5"
 val commonsCollectionVersion = "3.2.2"
 plugins {
     id("java")
@@ -10,7 +10,9 @@ dependencies {
     api("org.apache.cxf:cxf-rt-frontend-jaxws:$cxfVersion")
     api("org.apache.cxf:cxf-rt-features-logging:$cxfVersion")
     api("org.apache.cxf:cxf-rt-transports-http:$cxfVersion")
-    api("org.apache.cxf:cxf-rt-ws-security:$cxfVersion")
+    api("org.apache.cxf:cxf-rt-ws-security:$cxfVersion") {
+        exclude(group = "org.apache.velocity", module = "velocity")
+    }
 }
 
 publishing {

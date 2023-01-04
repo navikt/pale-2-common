@@ -30,11 +30,11 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
       - name: Checkout code
-        uses: actions/checkout@v1
+        uses: actions/checkout@v3
       - name: Gradle wrapper validation
         uses: gradle/wrapper-validation-action@v1
       - name: Setup gradle dependency cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: |
             ~/.gradle/caches
