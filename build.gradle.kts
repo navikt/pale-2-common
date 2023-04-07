@@ -1,6 +1,6 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
-val kotlinVersion = "1.8.10"
+val kotlinVersion = "1.8.20"
 val junitJupiterVersion = "5.9.2"
 
 repositories {
@@ -8,7 +8,7 @@ repositories {
 }
 
 plugins {
-    kotlin("jvm") version "1.8.10"
+    kotlin("jvm") version "1.8.20"
 }
 
 allprojects {
