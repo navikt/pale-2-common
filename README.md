@@ -3,6 +3,9 @@
 # pale-2-common
 Common code used over all legereklærings(PALE-2) applications
 
+Check Github releases to find the latest release version Check Github releases
+to find the latest release version
+
 
 ## Technologies used
 * Kotlin
