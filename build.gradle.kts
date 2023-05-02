@@ -1,14 +1,14 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
-val kotlinVersion = "1.8.10"
-val junitJupiterVersion = "5.9.2"
+val kotlinVersion = "1.8.21"
+val junitJupiterVersion = "5.9.3"
 
 repositories {
     mavenCentral()
 }
 
 plugins {
-    kotlin("jvm") version "1.8.10"
+    kotlin("jvm") version "1.8.21"
 }
 
 allprojects {
