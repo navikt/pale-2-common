@@ -1,4 +1,4 @@
-val cxfVersion = "3.5.5"
+val cxfVersion = "4.0.2"
 val commonsCollectionVersion = "3.2.2"
 plugins {
     id("java")
