@@ -1,6 +1,6 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
-val kotlinVersion = "1.9.10"
+val kotlinVersion = "1.9.20"
 val junitJupiterVersion = "5.10.0"
 
 repositories {
