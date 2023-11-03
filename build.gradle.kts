@@ -1,7 +1,6 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
 val kotlinVersion = "1.9.20"
 val junitJupiterVersion = "5.10.0"
+val javaVersion = JavaVersion.VERSION_17
 
 repositories {
     mavenCentral()
@@ -34,16 +33,23 @@ subprojects {
 
     }
 
-    tasks.withType<KotlinCompile> {
-        kotlinOptions.jvmTarget = "17"
-    }
+    tasks {
 
-    tasks.withType<Test> {
-        useJUnitPlatform()
-        testLogging {
-            events("passed", "skipped", "failed")
-            showStackTraces = true
-            exceptionFormat = org.gradle.api.tasks.testing.logging.TestExceptionFormat.FULL
+        compileKotlin {
+            kotlinOptions.jvmTarget = javaVersion.toString()
+        }
+
+        compileTestKotlin {
+            kotlinOptions.jvmTarget = javaVersion.toString()
+        }
+
+        test {
+            useJUnitPlatform {}
+            testLogging {
+                events("skipped", "failed")
+                showStackTraces = true
+                exceptionFormat = org.gradle.api.tasks.testing.logging.TestExceptionFormat.FULL
+            }
         }
     }
 }
