@@ -7,7 +7,7 @@ repositories {
 }
 
 plugins {
-    kotlin("jvm") version "1.9.23"
+    kotlin("jvm") version "1.9.24"
 }
 
 allprojects {
