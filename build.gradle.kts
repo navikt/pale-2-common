@@ -1,5 +1,5 @@
 val kotlinVersion = "2.0.0"
-val junitJupiterVersion = "5.10.2"
+val junitJupiterVersion = "5.10.3"
 val javaVersion = JavaVersion.VERSION_17
 
 repositories {
