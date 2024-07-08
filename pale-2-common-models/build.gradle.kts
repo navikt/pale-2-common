@@ -1,4 +1,4 @@
-val jacksonVersion = "2.17.1"
+val jacksonVersion = "2.17.2"
 
 plugins {
     id("java")
