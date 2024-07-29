@@ -1,4 +1,4 @@
-val kafkaVersion = "3.7.0"
+val kafkaVersion = "3.8.0"
 
 plugins {
     id("java")
