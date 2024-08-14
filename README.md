@@ -11,6 +11,7 @@ to find the latest release version
 * Kotlin
 * Jackson
 * Gradle
+* Kafka
 * MQ
 
 ## Requirements
